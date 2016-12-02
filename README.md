@@ -4,7 +4,7 @@ A fun little feature on our sites that I decided to clean up and turn into a jQu
 
 ## Overview
 
-I work at a streaming-video site, and this is the front-end portion of a little preview feature we implemented several years ago. It's the product of 3 people collaborating to achieve the following goals:
+I work at a streaming-video site, and this is the front-end portion of a little preview feature we implemented several years ago. It's my portion of the product of 3 people collaborating to achieve the following goals:
 
 - When a user moves their mouse ("scrubs") across a thumbnail image representing a video, they should see a preview from across that entire video
 - The location of their mouse across the timeline should correspond to the action that takes place in the video at that point
