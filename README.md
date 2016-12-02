@@ -27,3 +27,8 @@ The pursuit of these goals quickly led us to the conclusion that retrieving an i
   - That being said, it lends itself best to videos featuring a variety of movement. A talking-head interview doesn't benefit much from the ability to scan across the action. 
    - One good use case is sports video: scanning across a football game to zero in on a specific play is delightful.
 
+## Final Caveats
+
+- This is my first pass at "plugin-izing" the scrubber, so I provided some options that made some sense and allowed for testing of defaults vs. options. Subsequent work would ideally flesh out better options to offer and better ways to handle them.
+- scrubber.js is excessively commented for full disclosure. No, I don't usually comment that much. :-)
+- Both base.sass and the compressed base.css are included for completeness
