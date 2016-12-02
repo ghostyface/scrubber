@@ -97,7 +97,7 @@
                         clearTimeout(initLoadTimeOut);
                     }
 
-                    // we no longer want these fucntions to be called on any future mouseover of this thumb
+                    // we no longer want these functions to be called on any future mouseover of this thumb
                     thumbBox.unbind('mouseover', prepScrubbing);
                     thumbBox.unbind('mouseover', initScrubElements);
 
@@ -118,6 +118,7 @@
                 // don't hide the time pill while we're scrubbing
                 clearTimeout(scrubTimeOut);
 
+                // since the first thumb in the sprite is at top: 0, we subtract 1 from the numImages value to avoid positioning trouble
                 var uiValue = Math.floor( (e.pageX - thumb.offset().left) / ( settings.thumbWidth / (settings.numImages - 1) ) );
 
                 if(uiValue < 0) {
@@ -126,7 +127,7 @@
 
                 // multiply the number of the scene grab we are on by the height of the thumb to get the css position of the background sprite
                 var idx = uiValue,
-                ypos = (idx * settings.thumbHeight);
+                    ypos = (idx * settings.thumbHeight);
                 // set the background position
                 thumb.css("top",'-'+ypos+'px');
 
@@ -138,7 +139,7 @@
 
                 // set the position of the timebox, arrow and dot to move with the mouse
                 var timeboxPosition = Math.floor((e.pageX - thumb.offset().left)-(timeBox.width()/2)),
-                arrowPosition = Math.floor((timeboxPosition + (timeBox.width()/2)) -2);
+                    arrowPosition = Math.floor((timeboxPosition + (timeBox.width()/2)) -2);
 
                 // set some upper and lower boundaries and make some display tweaks to keep it pretty
                 if(timeboxPosition < -3) {
@@ -168,7 +169,8 @@
                 }
             };
 
-            // again, these are floored to prevent fractional seconds, and pinpoint accuracy is not the goal
+            // again, these are floored to prevent fractional seconds, and pinpoint accuracy is not
+            // the goal. Plus this way we avoid allowing users to scrub past the video's duration
             var formatScrubTime = function(secs) {
                 var hours = Math.floor(secs/3600);
                 if(hours < 1) {
